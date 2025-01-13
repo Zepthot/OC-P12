@@ -8,6 +8,7 @@ export default {
       },
       colors: {
         sportSee: '#E60000',
+        sportSeeDark: '#282D30',
       },
     },
   },

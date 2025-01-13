@@ -16,7 +16,7 @@ createRoot(document.getElementById('root')!).render(
       <Header />
       <div className="flex h-screen pt-[86px]">
         <Sidebar />
-        <main className="p-8">
+        <main className="pt-16 pl-28 pr-24 pb-24 w-full">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/user/:id" element={<UserProfile />} />

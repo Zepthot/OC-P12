@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="bg-gray-100">
       <h1>Home</h1>
       <Link
         to="/user/12"
