@@ -7,13 +7,10 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  // Legend,
   CartesianGrid,
 } from 'recharts';
 // import components
 import ActivityBarsTooltip from '@/components/ActivityBarsTooltip';
-// import data
-// import { mockUserData } from '@/utils/mockData';
 
 const data = [
   { name: '1', kilogram: 70, calories: 240 },
@@ -30,11 +27,11 @@ const data = [
 
 export default function ActivityChart() {
   return (
-    <div className="bg-[#FBFBFB] p-4 shadow rounded">
+    <div className="bg-[#FBFBFB] p-4 shadow rounded h-1/2">
       <h2 className="text-lg font-medium mb-4 ml-4 mt-2 absolute text-[#20253A]">
         Activité quotidienne
       </h2>
-      <div className="flex absolute right-32 mt-2 text-[#74798C]">
+      <div className="flex relative justify-end right-2 mt-2 text-[#74798C]">
         <p className="ml-8">
           <span className="bg-sportSeeDark inline-block w-2 h-2 rounded-full mr-2"></span>
           Poids (kg)
@@ -44,7 +41,7 @@ export default function ActivityChart() {
           Calories brûlées (kCal)
         </p>
       </div>
-      <ResponsiveContainer width="100%" height={320}>
+      <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
           margin={{ top: 100, right: 40, bottom: 32, left: 16 }}

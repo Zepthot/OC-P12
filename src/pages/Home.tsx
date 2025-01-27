@@ -4,20 +4,22 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
-    <div className="bg-gray-100">
-      <h1>Home</h1>
-      <Link
-        to="/user/12"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        User 12
-      </Link>
-      <Link
-        to="/user/18"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        User 18
-      </Link>
+    <div className="min-h-full flex flex-col items-center justify-center p-4">
+      <h1 className="text-sportSeeDark text-3xl font-bold mb-8">Bienvenue</h1>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 w-full max-w-md">
+        <Link
+          to="/user/12"
+          className="bg-sportSee hover:bg-sportSeeDark text-white font-bold py-4 px-6 rounded-lg shadow text-center transform hover:scale-105 transition"
+        >
+          <p className="text-lg">Utilisateur 12</p>
+        </Link>
+        <Link
+          to="/user/18"
+          className="bg-sportSee hover:bg-sportSeeDark text-white font-bold py-4 px-6 rounded-lg shadow text-center transform hover:scale-105 transition"
+        >
+          <p className="text-lg">Utilisateur 18</p>
+        </Link>
+      </div>
     </div>
   );
 }
