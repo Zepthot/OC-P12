@@ -9,16 +9,13 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-const data = [
-  { subject: 'Intensité', value: 120 },
-  { subject: 'Vitesse', value: 110 },
-  { subject: 'Force', value: 130 },
-  { subject: 'Endurance', value: 90 },
-  { subject: 'Energie', value: 100 },
-  { subject: 'Cardio', value: 85 },
-];
+interface PerformanceRadarChartProps {
+  data: { subject: string; value: number }[];
+}
 
-export default function PerformanceRadarChart() {
+export default function PerformanceRadarChart({
+  data,
+}: PerformanceRadarChartProps) {
   return (
     <div className="bg-sportSeeDark p-1 shadow rounded w-full">
       <ResponsiveContainer width="100%" height="100%" minWidth={248}>

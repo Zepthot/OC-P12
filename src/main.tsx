@@ -19,7 +19,7 @@ createRoot(document.getElementById('root')!).render(
         <main className="pt-16 pl-28 pr-24 pb-24 w-full">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/user/:id" element={<UserProfile />} />
+            <Route path="/user/:userId" element={<UserProfile />} />
           </Routes>
         </main>
       </div>

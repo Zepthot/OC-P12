@@ -11,17 +11,11 @@ import {
 // import components
 import CustomToolTip from '@/components/SessionsLineTooltip';
 
-const data = [
-  { name: 'L', sessionLength: 30 },
-  { name: 'M', sessionLength: 40 },
-  { name: 'M', sessionLength: 50 },
-  { name: 'J', sessionLength: 40 },
-  { name: 'V', sessionLength: 60 },
-  { name: 'S', sessionLength: 70 },
-  { name: 'D', sessionLength: 80 },
-];
+interface SessionsLineChartProps {
+  data: { name: string; sessionLength: number }[];
+}
 
-export default function SessionsLineChart() {
+export default function SessionsLineChart({ data }: SessionsLineChartProps) {
   return (
     <div className="bg-sportSee p-4 shadow rounded text-white w-full">
       <h2 className="text-base font-medium m-4 opacity-60">

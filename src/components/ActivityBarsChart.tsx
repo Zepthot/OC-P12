@@ -12,20 +12,11 @@ import {
 // import components
 import ActivityBarsTooltip from '@/components/ActivityBarsTooltip';
 
-const data = [
-  { name: '1', kilogram: 70, calories: 240 },
-  { name: '2', kilogram: 69.2, calories: 220 },
-  { name: '3', kilogram: 70, calories: 250 },
-  { name: '4', kilogram: 70.8, calories: 270 },
-  { name: '5', kilogram: 70, calories: 260 },
-  { name: '6', kilogram: 70, calories: 240 },
-  { name: '7', kilogram: 70, calories: 250 },
-  { name: '8', kilogram: 70.2, calories: 290 },
-  { name: '9', kilogram: 69.6, calories: 280 },
-  { name: '10', kilogram: 69.9, calories: 300 },
-];
+interface ActivityBarsChartProps {
+  data: { name: string; kilogram: number; calories: number }[];
+}
 
-export default function ActivityChart() {
+export default function ActivityBarsChart({ data }: ActivityBarsChartProps) {
   return (
     <div className="bg-[#FBFBFB] p-4 shadow rounded h-1/2">
       <h2 className="text-lg font-medium mb-4 ml-4 mt-2 absolute text-[#20253A]">
@@ -44,7 +35,7 @@ export default function ActivityChart() {
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
-          margin={{ top: 100, right: 40, bottom: 32, left: 16 }}
+          margin={{ top: 40, right: 40, bottom: 32, left: 16 }}
           barGap={8}
           barCategoryGap="35%"
         >
@@ -59,10 +50,7 @@ export default function ActivityChart() {
             yAxisId="kilogram"
             dataKey="kilogram"
             type="number"
-            domain={[
-              (dataMin: number) => Math.round(dataMin),
-              (dataMax: number) => Math.round(dataMax),
-            ]}
+            domain={['dataMin-2', 'dataMax+1']}
             tickCount={3}
             axisLine={false}
             orientation="right"
@@ -74,7 +62,7 @@ export default function ActivityChart() {
             yAxisId="calories"
             dataKey="calories"
             type="number"
-            domain={['dataMin - 20', 'dataMax + 10']}
+            domain={['dataMin - 50', 'dataMax + 50']}
             hide={true}
           />
           <Tooltip
