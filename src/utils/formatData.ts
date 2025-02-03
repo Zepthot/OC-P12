@@ -3,7 +3,7 @@ import {
   UserActivity,
   UserAverageSessions,
   UserPerformance,
-} from '../mocks/mockData';
+} from '@/utils/interfaces';
 
 export function formatUserData(data: {
   id: number;

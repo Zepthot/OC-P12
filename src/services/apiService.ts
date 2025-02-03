@@ -1,14 +1,16 @@
 import axios from 'axios';
 import {
-  UserData,
-  UserActivity,
-  UserAverageSessions,
-  UserPerformance,
   mockUserData,
   mockUserActivity,
   mockUserAverageSessions,
   mockUserPerformance,
 } from '../mocks/mockData';
+import {
+  UserData,
+  UserActivity,
+  UserAverageSessions,
+  UserPerformance,
+} from '@/utils/interfaces';
 import {
   formatUserData,
   formatUserActivity,
