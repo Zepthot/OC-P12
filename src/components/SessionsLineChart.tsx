@@ -1,5 +1,4 @@
-// import librairies
-import React from 'react';
+import React, { useState } from 'react';
 import {
   LineChart,
   Line,
@@ -8,7 +7,6 @@ import {
   ResponsiveContainer,
   YAxis,
 } from 'recharts';
-// import components
 import CustomToolTip from '@/components/SessionsLineTooltip';
 
 interface SessionsLineChartProps {
@@ -16,13 +14,34 @@ interface SessionsLineChartProps {
 }
 
 export default function SessionsLineChart({ data }: SessionsLineChartProps) {
+  const [cursorX, setCursorX] = useState<number | null>(null);
+
   return (
-    <div className="bg-sportSee p-4 shadow rounded text-white w-full">
+    <div className="bg-sportSee p-4 shadow rounded text-white w-full relative">
       <h2 className="text-base font-medium m-4 opacity-60">
         Durée moyenne des sessions
       </h2>
-      <ResponsiveContainer width="100%" height="70%" className="center">
-        <LineChart data={data}>
+      <ResponsiveContainer width="100%" height="70%" className="center rounded">
+        <LineChart
+          data={data}
+          onMouseMove={(e) => {
+            if (e && e.activeCoordinate) {
+              setCursorX(e.activeCoordinate.x);
+            }
+          }}
+          onMouseLeave={() => setCursorX(null)}
+        >
+          {/* Zone sombre dynamique */}
+          {cursorX !== null && (
+            <rect
+              x={cursorX}
+              y={0}
+              width={400} // Largeur arbitraire qui dépasse la zone visible
+              height="120%"
+              fill="rgba(0, 0, 0, 0.3)"
+            />
+          )}
+
           <XAxis
             dataKey="name"
             axisLine={false}
