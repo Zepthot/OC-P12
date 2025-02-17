@@ -15,7 +15,7 @@ export default function KeyDataCard({
   background,
 }: KeyDataCardProps) {
   return (
-    <div className="bg-[#FBFBFB] p-4 shadow rounded flex items-center space-x-4 w-64 h-32">
+    <div className="bg-[#FBFBFB] p-4 shadow rounded flex items-center space-x-4 w-48 h-24 xl:w-64 xl:h-32">
       <div className="w-16 h-16 relative rounded-md">
         <div className={`${background} absolute inset-0 rounded-md`}></div>
         <img

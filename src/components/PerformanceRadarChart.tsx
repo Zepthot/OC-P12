@@ -17,8 +17,8 @@ export default function PerformanceRadarChart({
   data,
 }: PerformanceRadarChartProps) {
   return (
-    <div className="bg-sportSeeDark p-1 shadow rounded w-full">
-      <ResponsiveContainer width="100%" height="100%" minWidth={248}>
+    <div className="bg-sportSeeDark p-1 shadow rounded w-1/3">
+      <ResponsiveContainer width="100%" height="100%">
         <RadarChart
           data={data}
           cx="50%"

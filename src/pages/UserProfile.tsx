@@ -98,7 +98,7 @@ export default function UserProfile() {
               })) || []
             }
           />
-          <div className="flex flex-row mt-8 gap-8 max-h-72">
+          <div className="flex flex-row mt-8 gap-8 max-h-[45%] xl:max-h-72">
             <SessionsLineChart
               data={
                 averageSessions?.sessions.map((session, index) => ({

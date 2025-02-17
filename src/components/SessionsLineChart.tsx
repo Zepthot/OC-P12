@@ -17,8 +17,8 @@ export default function SessionsLineChart({ data }: SessionsLineChartProps) {
   const [cursorX, setCursorX] = useState<number | null>(null);
 
   return (
-    <div className="bg-sportSee p-4 shadow rounded text-white w-full relative">
-      <h2 className="text-base font-medium m-4 opacity-60">
+    <div className="bg-sportSee p-4 shadow rounded text-white w-1/3 relative">
+      <h2 className="text-sm xl:text-base font-medium my-0 xl:my-4 m-4 opacity-60">
         Durée moyenne des sessions
       </h2>
       <ResponsiveContainer width="100%" height="70%" className="center rounded">
